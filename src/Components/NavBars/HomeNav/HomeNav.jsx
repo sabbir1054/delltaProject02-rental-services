@@ -8,12 +8,12 @@ const HomeNav = () => {
         <Navbar className={styles.navBackground}>
           <Container>
             <Navbar.Brand>
-              <Link to='/home' className='text-decoration-none '>Rental Service and Attendance System</Link>
+              <Link to='/home' className='text-decoration-none text-white '>Rental Service and Attendance System</Link>
             </Navbar.Brand>
             <Navbar.Toggle />
             <Navbar.Collapse className="justify-content-end">
               <Navbar.Text>
-                <Link to="/home">Logout</Link>
+                <Link to="/home" className='text-white'>Logout</Link>
               </Navbar.Text>
             </Navbar.Collapse>
           </Container>
