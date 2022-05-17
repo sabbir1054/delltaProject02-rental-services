@@ -1,0 +1,35 @@
+.colored_text {
+  color: #6358dc;
+}
+.login_wrap {
+  padding: 3vw;
+  box-shadow: -3px 21px 23px #e6e6e6;
+}
+.input_box {
+  padding-left: 50px;
+}
+
+.emailIcon {
+  z-index: 2;
+  position: relative;
+  font-size: 28px;
+  margin-bottom: -95px;
+  margin-left: 10px;
+}
+.passIcon {
+  font-size: 28px;
+  z-index: 2;
+  position: relative;
+  margin-top: -75px;
+  margin-left: 12px;
+}
+
+.submit_btn {
+  background-color: #6258dc;
+  color: white;
+  font-family: "Roboto", sans-serif;
+  border: none;
+}
+.submit_btn:hover {
+  background-color: #544ac4;
+}
