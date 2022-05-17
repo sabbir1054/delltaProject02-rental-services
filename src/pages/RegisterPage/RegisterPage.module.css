@@ -1,0 +1,28 @@
+.register_wrapper{
+    
+}
+
+.col_left{
+    background-color: #AA80F9;
+    padding: 10vh 0vh;
+}
+
+.col_right{
+    background-color: #FB73B5;
+    padding: 10vh 0vh;
+}
+
+.sign_up_teacher{
+    padding: 12px 50px;
+    color: #9667ec;
+    font-family: 'Poppins';
+ font-weight: bold;
+ cursor: pointer;
+}
+.sign_up_student{
+    padding: 12px 50px;
+    color: #d6498d;
+    font-family: 'Poppins';
+    font-weight: bold;
+    cursor: pointer;
+}

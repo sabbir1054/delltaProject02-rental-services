@@ -44,11 +44,13 @@ const LoginPage = () => {
                 <form onSubmit={handleSubmit(onSubmit)}>
                   <input
                     {...register("email")}
+                    placeholder='Email'
                     className={`w-100 my-3 py-2 ${styles.input_box}`}
                   />{" "}
                   <br />
                   <input
                     {...register("password", { required: true })}
+                    placeholder="Password"
                     type="password"
                     className={`${styles.input_box} w-100 mt-3 py-2`}
                   />{" "}
