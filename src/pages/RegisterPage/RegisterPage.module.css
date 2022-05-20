@@ -26,3 +26,39 @@
     font-weight: bold;
     cursor: pointer;
 }
+
+/*===========================
+      Teacher register page
+=========================== */
+
+.teacher_wrapper{
+    
+}
+
+.teacher_container_bg{
+  background-color: #9667ec;
+}
+
+.input_box_id{
+    width: 25%;
+    margin-right: 30px;
+    display: block;
+}
+.input_box_name{
+    width: 45%;
+    margin-right: 30px;
+}
+.input_box_email{
+    width: 45%;
+    
+}
+
+.teacher_submit_btn {
+  background-color: #6258dc;
+  color: white;
+  font-family: "Roboto", sans-serif;
+  border: none;
+}
+.teacher_submit_btn:hover {
+  background-color: #544ac4;
+}
