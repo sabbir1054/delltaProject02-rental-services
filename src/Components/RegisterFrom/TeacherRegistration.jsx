@@ -25,7 +25,7 @@ const TeacherRegistration = () => {
 
   return (
     <div className={styles.teacher_wrapper}>
-      <Container className="mt-5 pt-5">
+      <Container className="pt-5">
         <Row className={`${styles.teacher_container_bg} `}>
           <Col md={6} className={`${styles.teacher_left} d-flex justify-content-center`}>
             <img

@@ -31,12 +31,17 @@
       Teacher register page
 =========================== */
 
-.teacher_wrapper{
-    
+.teacher_wrapper,.student_wrapper{
+    background-color: #D4F7E5;
+    height: 100vh;
+    padding-top: 10vh;
 }
 
 .teacher_container_bg{
   background-color: #9667ec;
+}
+.student_container_bg{
+  background-color: #FB73B5;
 }
 
 .input_box_id{
@@ -61,4 +66,13 @@
 }
 .teacher_submit_btn:hover {
   background-color: #544ac4;
+}
+.student_submit_btn {
+  background-color: #FB73B5;
+  color: white;
+  font-family: "Roboto", sans-serif;
+  border: none;
+}
+.student_submit_btn:hover {
+  background-color: #d65895;
 }
