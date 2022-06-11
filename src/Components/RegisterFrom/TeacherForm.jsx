@@ -22,6 +22,8 @@ const TeacherForm = () => {
       if (data.password !== data.confirmPass) {
         setMatch(false);
       } else {
+        setMatch(true);
+        console.log(data);
       }
     };
     return (
@@ -77,7 +79,7 @@ const TeacherForm = () => {
             className={` my-1  py-2 ${styles.input_box_email}`}
             defaultValue={`${date}`}
             disabled
-            {...register("date", { required: true })}
+            // {...register("date", { required: true })}
           />
 
           <input
