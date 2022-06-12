@@ -47,7 +47,7 @@ const StudentForm = () => {
     } else {
       setMatch(true);
       createUserWithEmailAndPassword(data.email, data.password).then(() => {
-        // postData(data);
+        postData(data);
         navigate("/dashboard");
       });
     }
@@ -110,11 +110,13 @@ const StudentForm = () => {
         <input
           className={` my-1  py-2 ${styles.input_box_name}`}
           placeholder="Password"
+        type='password'
           {...register("password", { required: true })}
         />
         <input
           className={` my-1  py-2 ${styles.input_box_email}`}
           placeholder="Confirm Password"
+        type='password'
           {...register("confirmPass", { required: true })}
         />
 

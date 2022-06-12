@@ -46,7 +46,7 @@ const TeacherForm = () => {
       } else {
         setMatch(true);
         createUserWithEmailAndPassword(data.email, data.password).then(() => {
-          // postData(data);
+          postData(data);
           navigate("/dashboard");
         });
       }
