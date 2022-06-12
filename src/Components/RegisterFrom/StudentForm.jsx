@@ -1,14 +1,37 @@
 import React, { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
+import auth from '../../Firebase/FirebaseInit';
+import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
 import styles from "../../pages/RegisterPage/RegisterPage.module.css";
+import { useNavigate } from 'react-router-dom';
 const StudentForm = () => {
   const [match, setMatch] = useState(true);
+  const [createUserWithEmailAndPassword, user, loading, error] =
+    useCreateUserWithEmailAndPassword(auth);
 
-
+   const navigate = useNavigate();
+  
   // date and time
   const today = new Date();
   const date =
     today.getDate() + "/" + (today.getMonth() + 1) + "/" + today.getFullYear();
+  //post user data function
+
+  const postData = (data) => {
+    const url = "https://stormy-forest-12943.herokuapp.com/users";
+
+    fetch(url, {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(data),
+    })
+      .then((res) => res.json())
+      .then((result) => {
+        console.log(result);
+      });
+  };
 
   const {
     register,
@@ -18,13 +41,15 @@ const StudentForm = () => {
   } = useForm();
   const onSubmit = (data) => {
     data.date = date;
-   
+
     if (data.password !== data.confirmPass) {
       setMatch(false);
-      
     } else {
       setMatch(true);
-       console.log(data);
+      createUserWithEmailAndPassword(data.email, data.password).then(() => {
+        // postData(data);
+        navigate("/dashboard");
+      });
     }
   };
   return (
@@ -80,7 +105,6 @@ const StudentForm = () => {
           className={` my-1  py-2 ${styles.input_box_email}`}
           defaultValue={`Registered Date: ${date}`}
           disabled
-          
         />
 
         <input

@@ -1,16 +1,38 @@
 import React, { useState } from 'react';
+import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
+import { useNavigate } from 'react-router-dom';
+import auth from '../../Firebase/FirebaseInit';
 import styles from "../../pages/RegisterPage/RegisterPage.module.css";
 const TeacherForm = () => {
-    const [match, setMatch] = useState(true);
-    // date and time
-    const today = new Date();
-    const date =
-      today.getDate() +
-      "/" +
-      (today.getMonth() + 1) +
-      "/" +
-      today.getFullYear();
+   const [match, setMatch] = useState(true);
+   const [createUserWithEmailAndPassword, user, loading, error] =
+     useCreateUserWithEmailAndPassword(auth);
+
+   const navigate = useNavigate();
+
+   // date and time
+   const today = new Date();
+   const date =
+     today.getDate() + "/" + (today.getMonth() + 1) + "/" + today.getFullYear();
+   //post user data function
+
+   const postData = (data) => {
+     const url = "https://stormy-forest-12943.herokuapp.com/users";
+
+     fetch(url, {
+       method: "POST",
+       headers: {
+         "content-type": "application/json",
+       },
+       body: JSON.stringify(data),
+     })
+       .then((res) => res.json())
+       .then((result) => {
+         console.log(result);
+       });
+   };
+
 
     const {
       register,
@@ -23,7 +45,10 @@ const TeacherForm = () => {
         setMatch(false);
       } else {
         setMatch(true);
-        console.log(data);
+        createUserWithEmailAndPassword(data.email, data.password).then(() => {
+          // postData(data);
+          navigate("/dashboard");
+        });
       }
     };
     return (

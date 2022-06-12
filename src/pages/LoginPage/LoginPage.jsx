@@ -1,19 +1,29 @@
 import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
+import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
 import { useForm } from "react-hook-form";
 import { MdEmail, MdVpnKey } from "react-icons/md";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import auth from "../../Firebase/FirebaseInit";
 import styles from "./LoginPage.module.css";
 const LoginPage = () => {
+  const [signInWithEmailAndPassword, user, loading, error] =
+    useSignInWithEmailAndPassword(auth);
+  const navigate = useNavigate();
   const {
     register,
     handleSubmit,
     watch,
     formState: { errors },
   } = useForm();
-  const onSubmit = (data) => console.log(data);
+  const onSubmit = (data) => {
+    signInWithEmailAndPassword(data.email, data.password).then(() => {
+      navigate('/dashboard'); 
+    });
+    
+  };
 
-  console.log(watch("example")); // watch input value by passing the name of it
+
 
   return (
     <div className="py-5 my-5 ">

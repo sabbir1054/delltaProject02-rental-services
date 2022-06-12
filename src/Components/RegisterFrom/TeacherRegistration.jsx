@@ -4,24 +4,7 @@ import { useForm } from "react-hook-form";
 import styles from "../../pages/RegisterPage/RegisterPage.module.css";
 import TeacherForm from "./TeacherForm";
 const TeacherRegistration = () => {
-  const [match, setMatch] = useState(true);
-  // date and time
-  const today = new Date();
-  const date =
-    today.getDate() + "/" + (today.getMonth() + 1) + "/" + today.getFullYear();
-
-  const {
-    register,
-    handleSubmit,
-    watch,
-    formState: { errors },
-  } = useForm();
-  const onSubmit = (data) => {
-    if (data.password !== data.confirmPass) {
-      setMatch(false);
-    } else {
-    }
-  };
+ 
 
   return (
     <div className={styles.teacher_wrapper}>
