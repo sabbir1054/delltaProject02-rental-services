@@ -18,7 +18,7 @@ const LoginPage = () => {
   } = useForm();
   const onSubmit = (data) => {
     signInWithEmailAndPassword(data.email, data.password).then(() => {
-      navigate('/dashboard'); 
+      navigate(`${user?"/dashboard":"/"}`);
     });
     
   };
@@ -54,7 +54,7 @@ const LoginPage = () => {
                 <form onSubmit={handleSubmit(onSubmit)}>
                   <input
                     {...register("email")}
-                    placeholder='Email'
+                    placeholder="Email"
                     className={`w-100 my-3 py-2 ${styles.input_box}`}
                   />{" "}
                   <br />
@@ -68,13 +68,22 @@ const LoginPage = () => {
                   {errors.exampleRequired && (
                     <span>This field is required</span>
                   )}
-                  <p className="text-end my-0 text-primary text-decoration-underline">Forgot Password</p>
+                  <p className="text-end my-0 text-primary text-decoration-underline">
+                    Forgot Password
+                  </p>
                   <input
                     value="Login"
                     type="submit"
                     className={`${styles.submit_btn} w-100 my-3 py-2`}
                   />
                 </form>
+                {error ? (
+                  <p className="text-danger">
+                    "Please input valid email and password"
+                  </p>
+                ) : (
+                  ""
+                )}
                 <br />
                 <p className="fs-6">
                   Don't have an account? <Link to="/register"> Register</Link>{" "}

@@ -1,9 +1,23 @@
+import { signOut } from 'firebase/auth';
 import React from 'react';
 import { Container, Nav, Navbar } from 'react-bootstrap';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link } from 'react-router-dom';
+import auth from '../../../Firebase/FirebaseInit';
 import styles from './StudentNav.module.css'
 
 const StudentNav = () => {
+  const [user] = useAuthState(auth);
+  console.log(user);
+  const handleSignOut = () => {
+    signOut(auth)
+      .then(() => {
+        // Sign-out successful.
+      })
+      .catch((error) => {
+        // An error happened.
+      });
+  };
     return (
       <>
         <Navbar className={styles.stuNavBg} expand="lg">
@@ -42,12 +56,18 @@ const StudentNav = () => {
                   Balance
                 </Link>
               </Nav>
-              <Link
-                to="/"
-                className={`text-decoration-none mx-2 text-white ${styles.navLink}`}
-              >
-                Logout
-              </Link>
+              {user ? (
+                <div>
+                  <small className="text-white">user : {user.email}</small>
+                  <Link
+                    to="/"
+                    className={`text-decoration-none mx-2 text-white ${styles.navLink}`}
+                    onClick={()=>handleSignOut()}
+                  >
+                    Logout
+                  </Link>
+                </div>
+              ) : ""}
             </Navbar.Collapse>
           </Container>
         </Navbar>
