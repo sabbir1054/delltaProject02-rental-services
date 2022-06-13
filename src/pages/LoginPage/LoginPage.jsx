@@ -1,4 +1,5 @@
 import React from "react";
+import { useState } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
 import { useForm } from "react-hook-form";
@@ -7,6 +8,7 @@ import { Link, useNavigate } from "react-router-dom";
 import auth from "../../Firebase/FirebaseInit";
 import styles from "./LoginPage.module.css";
 const LoginPage = () => {
+  const [email, setEmail] = useState('');
   const [signInWithEmailAndPassword, user, loading, error] =
     useSignInWithEmailAndPassword(auth);
   const navigate = useNavigate();
@@ -17,13 +19,15 @@ const LoginPage = () => {
     formState: { errors },
   } = useForm();
   const onSubmit = (data) => {
-    signInWithEmailAndPassword(data.email, data.password).then(() => {
-      navigate(`${user?"/dashboard":"/"}`);
+    signInWithEmailAndPassword(data.email, data.password).then((result) => {
+      setEmail(data.email);
     });
     
   };
 
-
+if (user) {
+  navigate(`/dashboard/${email}`)
+}
 
   return (
     <div className="py-5 my-5 ">
