@@ -23,7 +23,7 @@ const HomeNav = () => {
                   <div>
                     <small className="text-white">user : {user.email}</small>
                     <Link
-                      to="/dashboard"
+                      to={`/dashboard/${user.email}`}
                       className={` mx-2 text-white ${styles.navLink}`}
                     >
                       Dashboard

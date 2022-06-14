@@ -5,6 +5,7 @@ import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
 import { useForm } from "react-hook-form";
 import { MdEmail, MdVpnKey } from "react-icons/md";
 import { Link, useNavigate } from "react-router-dom";
+import Loader from "../../Components/Loader/Loader";
 import auth from "../../Firebase/FirebaseInit";
 import styles from "./LoginPage.module.css";
 const LoginPage = () => {
@@ -24,7 +25,11 @@ const LoginPage = () => {
     });
     
   };
-
+if (loading) {
+  {
+    <Loader></Loader>
+   }
+}
 if (user) {
   navigate(`/dashboard/${email}`)
 }

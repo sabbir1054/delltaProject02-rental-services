@@ -1,8 +1,13 @@
-import React from "react";
+import { useState } from "react";
+import { useEffect } from "react";
 import { Card, Col, Container, Row } from "react-bootstrap";
+import Loader from "../../../Components/Loader/Loader";
 import StudentNav from "../../../Components/NavBars/StudentsNav/StudentNav";
 import styles from "../Dashboard.module.css";
-const Student = () => {
+import SubjectCard from "./SubjectCard";
+const Student = ({ user }) => {
+
+
   return (
     <>
       <StudentNav></StudentNav>
@@ -11,7 +16,9 @@ const Student = () => {
           <Container className="">
             <Row className={` rounded ${styles.stu_heading}`}>
               <Col md={8} className="pt-4 ps-4 text-white">
-                <h3 className="display-5 ">WELCOME BACK! Sabbir Hossain</h3>
+                <h3 className="display-5 text-uppercase">
+                  WELCOME BACK! {user.name}{" "}
+                </h3>
                 <p className="fs-4">Explore Your Galaxy</p>
               </Col>
               <Col md={4} className="d-flex justify-content-center">
@@ -35,7 +42,7 @@ const Student = () => {
             <Col md={6}>
               <Card className="py-5 text-center">
                 <h4>Your Balance</h4>
-                <h2 className="">1400.12</h2>
+                <h2 className="">{user.balance}</h2>
               </Card>
             </Col>
           </Row>
@@ -43,21 +50,9 @@ const Student = () => {
         <div className={`course-cards`}>
           <h4 className="text-center py-3">Your Courses</h4>
           <Row xs={1} md={3} className="g-4">
-            {Array.from({ length: 5 }).map((_, idx) => (
-              <Col>
-                <Card>
-                  <Card.Img
-                    variant="top"
-                    src="https://i.ibb.co/cXHCR20/staar-english-i-test-prep-practice-220274-large.jpg"
-                  />
-                  <Card.Body>
-                    <Card.Text>
-                                <h4 className="text-center">English 1st paper</h4>
-                    </Card.Text>
-                  </Card.Body>
-                </Card>
-              </Col>
-            ))}
+            {user.courses?user.courses.map((course) => (
+              <SubjectCard course={course}></SubjectCard>
+            )):<Loader></Loader>}
           </Row>
         </div>
       </Container>

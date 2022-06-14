@@ -15,6 +15,7 @@ const Dashboard = () => {
   return (
     <>
       {
+        
        
         (user.role==="teacher")?(<Teacher user={user}></Teacher>):(<Student user={user}></Student>)
       }
