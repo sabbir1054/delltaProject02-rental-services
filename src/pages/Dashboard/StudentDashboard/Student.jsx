@@ -1,5 +1,3 @@
-import { useState } from "react";
-import { useEffect } from "react";
 import { Card, Col, Container, Row } from "react-bootstrap";
 import Loader from "../../../Components/Loader/Loader";
 import StudentNav from "../../../Components/NavBars/StudentsNav/StudentNav";

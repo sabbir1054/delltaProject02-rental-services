@@ -24,7 +24,10 @@ const StudentNav = () => {
           <Container>
             <Navbar.Brand>
               {" "}
-              <Link to="/home" className="text-decoration-none text-white ">
+              <Link
+                to={`/dashboard/${user.email}`}
+                className="text-decoration-none text-white "
+              >
                 Student Portal
               </Link>
             </Navbar.Brand>
@@ -32,25 +35,25 @@ const StudentNav = () => {
             <Navbar.Collapse id="basic-navbar-nav">
               <Nav className="mx-auto">
                 <Link
-                  to="/s-profile"
+                  to={`/profile/${user.email}`}
                   className={`text-decoration-none mx-2 text-white ${styles.navLink}`}
                 >
                   Profile
                 </Link>
                 <Link
-                  to="/s-courses"
+                  to={`/courses/${user.email}`}
                   className={`text-decoration-none mx-2 text-white ${styles.navLink}`}
                 >
                   Courses
                 </Link>
                 <Link
-                  to="/s-result"
+                  to={`/results/${user.email}`}
                   className={`text-decoration-none mx-2 text-white ${styles.navLink}`}
                 >
                   Result
                 </Link>
                 <Link
-                  to="/balance"
+                  to={`/balance/${user.email}`}
                   className={`text-decoration-none mx-2 text-white ${styles.navLink}`}
                 >
                   Balance
@@ -60,14 +63,16 @@ const StudentNav = () => {
                 <div>
                   <small className="text-white">user : {user.email}</small>
                   <Link
-                    to="/"
+                    to={`/`}
                     className={`text-decoration-none mx-2 text-white ${styles.navLink}`}
-                    onClick={()=>handleSignOut()}
+                    onClick={() => handleSignOut()}
                   >
                     Logout
                   </Link>
                 </div>
-              ) : ""}
+              ) : (
+                ""
+              )}
             </Navbar.Collapse>
           </Container>
         </Navbar>
