@@ -2,41 +2,40 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import styles from "../../pages/RegisterPage/RegisterPage.module.css";
 const StudentInfo = ({ userData }) => {
-    const [isEditable, setIsEditable] = useState(false);
+  const [isEditable, setIsEditable] = useState(false);
+  const [newData, setNewData] = useState({});
 
-
-//post data to database
-/*     const postData = (data) => {
-      const url = "https://stormy-forest-12943.herokuapp.com/users";
-
-      fetch(url, {
-        method: "POST",
-        headers: {
-          "content-type": "application/json",
-        },
-        body: JSON.stringify(data),
-      })
-        .then((res) => res.json())
-        .then((result) => {
-          console.log(result);
-        });
-    };
-
- */
-
-    const updateProfile = () => {
-        setIsEditable(true);
-    }
-    const saveProfile = () => {
-      setIsEditable(false);
-    };
   const {
     register,
     handleSubmit,
     watch,
     formState: { errors },
   } = useForm();
-  const onSubmit = (data) => {};
+  const onSubmit = (data) => {
+    setNewData(data);
+  };
+//post data to database
+  const handleUpdate = () => {
+    fetch(`http://localhost:5000/users/${userData.email}`, {
+      method: "PUT",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(newData),
+    })
+      .then((res) => res.json())
+      .then((data) => console.log(data)); 
+  };
+ 
+
+    const updateProfile = () => {
+        setIsEditable(true);
+    }
+    const saveProfile = () => {
+      setIsEditable(false);
+      handleUpdate();
+    };
+
   return (
     <div>
       <form onSubmit={handleSubmit(onSubmit)}>
@@ -47,7 +46,7 @@ const StudentInfo = ({ userData }) => {
           disabled
           defaultValue={userData.id ? userData.id : ``}
           className={`my-1 py-2 ${styles.input_box_id}`}
-          {...register("id", { required: true })}
+          {...register("id",)}
         />{" "}
         <br />
         <label htmlFor="ID">
@@ -69,7 +68,7 @@ const StudentInfo = ({ userData }) => {
           defaultValue={userData.id ? userData.email : ``}
           className={` my-1  py-2 ${styles.input_box_email}`}
           placeholder="Email"
-          {...register("email", { required: true })}
+          {...register("email",)}
         />{" "}
         <br />
         <label htmlFor="email">
@@ -80,7 +79,7 @@ const StudentInfo = ({ userData }) => {
           defaultValue={userData.id ? userData.dept : ``}
           className={` my-1  py-2 ${styles.input_box_name}`}
           placeholder="Department"
-          {...register("dept", { required: true })}
+          {...register("dept",)}
         />{" "}
         <br />
         <label htmlFor="email">

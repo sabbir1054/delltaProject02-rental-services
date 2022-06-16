@@ -46,9 +46,10 @@ const StudentForm = () => {
       setMatch(false);
     } else {
       setMatch(true);
+      const url = `/dashboard/${data.email}`;
       createUserWithEmailAndPassword(data.email, data.password).then(() => {
         postData(data);
-        navigate("/dashboard");
+        user?navigate(url):navigate('/')
       });
     }
   };
@@ -57,7 +58,7 @@ const StudentForm = () => {
       <h4 className="display-6 text-black text-center pt-2">Sign up</h4>
       <form onSubmit={handleSubmit(onSubmit)}>
         <input
-          defaultValue="teacher"
+          defaultValue="student"
           className="d-none"
           {...register("role", { required: true })}
         />

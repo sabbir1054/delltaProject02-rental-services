@@ -1,0 +1,14 @@
+{
+  
+  "id": "5785756",
+  "role": "student",
+  "name": "sabbir",
+  "email": "sabbir1054@gmail.com",
+  "password": "45",
+  "dept": "Software Engineering",
+  "mobile": "01254789654",
+  "address": "Norshinghopur,Ashulia",
+  "balance": "143.254",
+  "registerDate": "12/05/2022",
+  "courses": ["SE111", "SE131", "SE101"]
+}
