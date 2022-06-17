@@ -16,7 +16,7 @@ const StudentInfo = ({ userData }) => {
   };
 //post data to database
   const handleUpdate = () => {
-    fetch(`http://localhost:5000/users/${userData.email}`, {
+    fetch(`https://stormy-forest-12943.herokuapp.com/users/${userData.email}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",

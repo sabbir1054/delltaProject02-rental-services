@@ -1,0 +1,14 @@
+{
+  "_id": { "$oid": "629f0493462f89a26decdc8f" },
+  "id": "5785756",
+  "role": "student",
+  "name": "Sabbir Hossain",
+  "email": "sabbir1054@gmail.com",
+  "password": "45",
+  "dept": "Software Engineering",
+  "mobile": "01733208221",
+  "address": "Norshinghopur,Ashulia",
+  "balance": "143.254",
+  "registerDate": "12/05/2022",
+  "courses": ["SE111", "SE131", "SE101"]
+}

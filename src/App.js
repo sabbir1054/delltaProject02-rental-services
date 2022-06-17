@@ -3,6 +3,7 @@ import StudentRegister from "./Components/RegisterFrom/StudentRegister";
 import TeacherRegistration from "./Components/RegisterFrom/TeacherRegistration";
 import Dashboard from "./pages/Dashboard/Dashboard";
 import UserBalance from "./pages/Dashboard/UserBalance/UserBalance";
+import UserCourses from "./pages/Dashboard/UserCourses/UserCourses";
 import UserProfile from "./pages/Dashboard/UserProfile/UserProfile";
 import UserResult from "./pages/Dashboard/UserResult/UserResult";
 import Home from "./pages/HomePage/Home";
@@ -19,9 +20,9 @@ function App() {
         <Route path="/teacherRegister" element={<TeacherRegistration />} />
         <Route path="/dashboard/:email" element={<Dashboard />} />
         <Route path="/profile/:email" element={<UserProfile/> } />
-        <Route path="/result/:email" element={<UserResult/> } />
+        <Route path="/results/:email" element={<UserResult/> } />
         <Route path="/balance/:email" element={<UserBalance/> } />
-        <Route path="/courses/:email" element={<UserBalance/> } />
+        <Route path="/courses/:email" element={<UserCourses/> } />
       </Routes>
     </>
   );
