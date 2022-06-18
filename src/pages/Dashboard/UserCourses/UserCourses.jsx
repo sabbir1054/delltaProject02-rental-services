@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom';
 import Loader from '../../../Components/Loader/Loader';
 import auth from '../../../Firebase/FirebaseInit';
 import StudentCourse from '../../StudentPages/StudentCourse';
+import TeacherCourses from '../../TeacherPages/TeacherCourses';
 
 const UserCourses = () => {
     const [user] = useAuthState(auth);
@@ -18,7 +19,7 @@ console.log(userData);
     return (
         <div>
             {
-                user?<StudentCourse userData={userData } />:<Loader></Loader>
+                user ? userData.role === "student" ? <StudentCourse userData={userData} /> : <TeacherCourses userData={userData } />:<Loader></Loader>
             }
         </div>
     );

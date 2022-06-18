@@ -5,6 +5,7 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { useParams } from "react-router-dom";
 import Loader from "../../../Components/Loader/Loader";
 import StudentNav from "../../../Components/NavBars/StudentsNav/StudentNav";
+import TeacherNav from "../../../Components/NavBars/TeacherNav/TeacherNav";
 import auth from "../../../Firebase/FirebaseInit";
 import styles from "../Dashboard.module.css";
 const UserBalance = () => {
@@ -21,9 +22,11 @@ const UserBalance = () => {
     <>
       {user ? (
         <div>
-          <StudentNav />
+          {
+            person.role==="student"?<StudentNav />:<TeacherNav/>
+          }
           <Container className="mt-5">
-            <Row className={` rounded ${styles.stu_heading} mb-5`}>
+            <Row className={` rounded ${user.role==="student"?styles.stu_heading:styles.teacher_heading} mb-5`}>
               <Col md={8} className="pt-4 ps-4 text-white">
                 <h3 className="display-5 text-uppercase">
                   Hi ! {user && person.name}{" "}

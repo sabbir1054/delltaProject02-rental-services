@@ -22,6 +22,14 @@
         Teacher Dashboard
 ======================================= */
 
+.teacher_heading{
+        background-color: #A179EB;
+        font-family:'Roboto', sans-serif;
+}
+
+.allStudent{
+        cursor: pointer;
+}
 
 
 

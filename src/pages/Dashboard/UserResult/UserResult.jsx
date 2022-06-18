@@ -3,6 +3,7 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import { useParams } from 'react-router-dom';
 import Loader from '../../../Components/Loader/Loader';
 import StudentNav from '../../../Components/NavBars/StudentsNav/StudentNav';
+import TeacherNav from '../../../Components/NavBars/TeacherNav/TeacherNav';
 import auth from '../../../Firebase/FirebaseInit';
 import StudentsResult from '../../StudentPages/StudentsResult';
  
@@ -20,8 +21,16 @@ const UserResult = () => {
       <div>
         {user ? (
           <div>
-            <StudentNav />
-            { user?userData?<StudentsResult userData={ userData} />:<Loader/>:<Loader/> }
+            {userData.role === "student" ? <StudentNav /> : <TeacherNav/>}
+            {user ? (
+              userData ? (
+                <StudentsResult userData={userData} />
+              ) : (
+                <Loader />
+              )
+            ) : (
+              <Loader />
+            )}
           </div>
         ) : (
           <Loader></Loader>

@@ -50,9 +50,9 @@ if (user) {
             className={`bg-white ms-5 my-5 rounded ${styles.login_wrap}`}
           >
             <h1>
-              Welcome to{" "}
+              Please Login For
               <span className={`d-block fw-bold ${styles.colored_text}`}>
-                Student Portal
+                Your Galaxy
               </span>
             </h1>
 

@@ -6,6 +6,7 @@ import Loader from "../../../Components/Loader/Loader";
 import StudentNav from "../../../Components/NavBars/StudentsNav/StudentNav";
 import auth from "../../../Firebase/FirebaseInit";
 import StudentProfile from "../../StudentPages/StudentProfile";
+import TeacherProfile from "../../TeacherPages/TeacherProfile";
 
 const UserProfile = () => {
     const [user] = useAuthState(auth);
@@ -18,14 +19,17 @@ const UserProfile = () => {
   }, []);
     console.log(userData);
   return (
-      <div className="bg-light">
-          
-    {/*   {user.role === "teacher" ? (
-        <Teacher user={user}></Teacher>
+    <div className="bg-light">
+     
+      {user ? (
+        userData.role === "student" ? (
+          <StudentProfile userData={userData}></StudentProfile>
+        ) : (
+          <TeacherProfile userData={userData} />
+        )
       ) : (
-        <Student user={user}></Student>
-      )} */}
-         {user? <StudentProfile userData={userData}></StudentProfile>:<Loader></Loader>}
+        <Loader></Loader>
+      )}
     </div>
   );
 };
