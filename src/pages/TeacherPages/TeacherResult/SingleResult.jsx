@@ -5,7 +5,7 @@ import { useParams } from "react-router-dom";
 import Loader from "../../../Components/Loader/Loader";
 import auth from "../../../Firebase/FirebaseInit";
 import styles from "./table.module.css";
-const SingleResult = ({ student, slNo }) => {
+const SingleResult = ({ student, slNo,courseId }) => {
   const params = useParams();
   const selectedCourse = params.courseId;
   const [user] = useAuthState(auth);
@@ -13,48 +13,56 @@ const SingleResult = ({ student, slNo }) => {
   const [studentResult, setStudentResult] = useState({});
   const [grade, setGrade] = useState("");
   const [isEditable, setIsEditable] = useState(false);
-  const [newData, setNewData] = useState({});
-  const newResult = {};
+
 
   //post data to database
-  const handleUpdate = () => {
-    console.log(newResult);
-    //   fetch(`https://stormy-forest-12943.herokuapp.com/users/${userData.email}`, {
-    //     method: "PUT",
-    //     headers: {
-    //       "content-type": "application/json",
-    //     },
-    //     body: JSON.stringify(newResult),
-    //   })
-    //     .then((res) => res.json())
-    //     .then((data) => console.log(data));
+  const handleUpdate = (data) => {
+
+     fetch(
+        `https://stormy-forest-12943.herokuapp.com/results/${student}/${courseId}`,
+        {
+          method: "PUT",
+          headers: {
+            "content-type": "application/json",
+          },
+          body: JSON.stringify(data),
+        }
+      )
+        .then((res) => res.json())
+        .then((data) => console.log(data));
   };
 
 
   const onSubmit = () => {
-    const quiz1 = document.getElementById('quiz1').value;
-    const quiz2 = document.getElementById('quiz2').value;
-    const quiz3 = document.getElementById('quiz3').value;
-    const assignment1 = document.getElementById('assignment1').value;
-    const presentation = document.getElementById('presentation').value;
-    const mid = document.getElementById('mid').value;
-    const final = document.getElementById('final').value;
+    const currentResult = {};
+    const quiz1 = document.getElementById(`quiz1${data.id}`).value;
+    const quiz2 = document.getElementById(`quiz2${data.id}`).value;
+    const quiz3 = document.getElementById(`quiz3${data.id}`).value;
+    const assignment1 = document.getElementById(`assignment1${data.id}`).value;
+    const presentation = document.getElementById(
+      `presentation${data.id}`
+    ).value;
+    const mid = document.getElementById(`mid${data.id}`).value;
+    const final = document.getElementById(`final${data.id}`).value;
+    
     
     //set in the object
-    newResult.quiz1 = quiz1;
-    newResult.quiz2 = quiz2;
-    newResult.quiz3 = quiz3;
-    newResult.assignment = assignment1;
-    newResult.presentation = presentation;
-    newResult.mid = mid;
-    newResult.final = final;
-    newResult.grade = grade;
-
-    // setTimeout(() => {
-    //   window.location.reload(false);
-    // }, 500);
-    handleUpdate();
+    currentResult.quiz1 = quiz1;
+    currentResult.quiz2 = quiz2;
+    currentResult.quiz3 = quiz3;
+    currentResult.assignment = assignment1;
+    currentResult.presentation = presentation;
+    currentResult.mid = mid;
+    currentResult.final = final;
+    currentResult.grade = grade;
+  
+    handleUpdate(currentResult);
     saveProfile();
+    
+    setTimeout(() => {
+      window.location.reload(false);
+    }, 1000);
+ 
   };
 
   const updateProfile = () => {
@@ -122,7 +130,7 @@ const SingleResult = ({ student, slNo }) => {
 
           <td className={`${styles.width}`}>
             <input
-              id="quiz1"
+              id={`quiz1${data.id}`}
               className={`${styles.width}`}
               disabled={isEditable ? false : true}
               defaultValue={studentResult.quiz1}
@@ -131,7 +139,7 @@ const SingleResult = ({ student, slNo }) => {
           </td>
           <td className={`${styles.width}`}>
             <input
-              id="quiz2"
+              id={`quiz2${data.id}`}
               className={`${styles.width}`}
               disabled={isEditable ? false : true}
               defaultValue={studentResult.quiz2}
@@ -140,7 +148,7 @@ const SingleResult = ({ student, slNo }) => {
           </td>
           <td className={`${styles.width}`}>
             <input
-              id="quiz3"
+              id={`quiz3${data.id}`}
               className={`${styles.width}`}
               disabled={isEditable ? false : true}
               defaultValue={studentResult.quiz3}
@@ -150,7 +158,7 @@ const SingleResult = ({ student, slNo }) => {
 
           <td className={`${styles.width}`}>
             <input
-              id="assignment1"
+              id={`assignment1${data.id}`}
               className={`${styles.width}`}
               disabled={isEditable ? false : true}
               defaultValue={studentResult.assignment1}
@@ -159,7 +167,7 @@ const SingleResult = ({ student, slNo }) => {
           </td>
           <td className={`${styles.width}`}>
             <input
-              id="presentation"
+              id={`presentation${data.id}`}
               className={`${styles.width}`}
               disabled={isEditable ? false : true}
               defaultValue={studentResult.presentation}
@@ -168,7 +176,7 @@ const SingleResult = ({ student, slNo }) => {
           </td>
           <td className={`${styles.width}`}>
             <input
-              id="mid"
+              id={`mid${data.id}`}
               className={`${styles.width}`}
               disabled={isEditable ? false : true}
               defaultValue={studentResult.mid}
@@ -177,7 +185,7 @@ const SingleResult = ({ student, slNo }) => {
           </td>
           <td className={`${styles.width}`}>
             <input
-              id="final"
+              id={`final${data.id}`}
               className={`${styles.width}`}
               disabled={isEditable ? false : true}
               defaultValue={studentResult.final}

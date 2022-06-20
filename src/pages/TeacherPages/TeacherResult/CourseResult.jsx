@@ -9,7 +9,8 @@ import SingleResult from "./SingleResult";
 
 const CourseResult = () => {
   const [user] = useAuthState(auth);
-    const params = useParams();
+  const params = useParams();
+  
    const [students, setStudents] = useState([]);
   const [data, setData] = useState([]);
   
@@ -55,6 +56,8 @@ const CourseResult = () => {
                   <SingleResult
                     student={student}
                     slNo={data.studentList.indexOf(student)}
+                    courseId={params.courseId}
+                    key={data.studentList.indexOf(student)}
                   />
                 ))
               ) : (
