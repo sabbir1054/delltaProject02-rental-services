@@ -25,7 +25,7 @@ function App() {
         <Route path="/dashboard/:email" element={<Dashboard />} />
         <Route path="/profile/:email" element={<UserProfile />} />
         <Route path="/results/:email" element={<UserResult />} />
-        <Route path="/courseResult/:courseId" element={<UserResult />} />
+        <Route path="/courseResult/:courseId" element={<CourseResult />} />
         <Route path="/balance/:email" element={<UserBalance />} />
         <Route path="/courses/:email" element={<UserCourses />} />
         <Route path="/enrolledList/:courseId" element={<EnrolledStudent />} />

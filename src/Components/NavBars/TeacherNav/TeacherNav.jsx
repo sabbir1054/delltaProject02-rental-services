@@ -7,7 +7,7 @@ import auth from '../../../Firebase/FirebaseInit';
 import styles from "../StudentsNav/StudentNav.module.css";
 const TeacherNav = () => {
      const [user] = useAuthState(auth);
-     console.log(user);
+
      const handleSignOut = () => {
        signOut(auth)
          .then(() => {

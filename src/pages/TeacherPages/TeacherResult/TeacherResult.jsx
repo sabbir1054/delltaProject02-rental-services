@@ -18,8 +18,6 @@ const TeacherResult = ({ userData }) => {
           )}
               </Row>
           </Container>
-          <hr />
-          <CourseResult/>
     </div>
   );
 };

@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Container, Table } from "react-bootstrap";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useParams } from "react-router-dom";
+import Loader from "../../Components/Loader/Loader";
 import TeacherNav from "../../Components/NavBars/TeacherNav/TeacherNav";
 import auth from "../../Firebase/FirebaseInit";
 import SingleEnrolled from "./SingleEnrolled";
@@ -24,7 +25,8 @@ const EnrolledStudent = () => {
   }, []);
   return (
     <div className="bg-light">
-      <TeacherNav></TeacherNav>
+      {user ? (<>
+       <TeacherNav></TeacherNav>
       <Container className="">
         <h4 className=" pt-5">Course ID : {params.courseId}</h4>
         <h4 className=" pb-5">Course Title : {data.courseTitle}</h4>
@@ -46,6 +48,7 @@ const EnrolledStudent = () => {
           </tbody>
         </Table>
       </Container>
+      </>):<Loader/>}
     </div>
   );
 };

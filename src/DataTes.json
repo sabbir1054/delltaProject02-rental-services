@@ -1,37 +1,145 @@
 [
   {
-    "_id": "629ee40f462f89a26dc9d910",
-    "courseId": "SE101",
-    "courseTitle": "Introduction to software Engineering",
-    "courseImg": "https://i.ibb.co/cXHCR20/staar-english-i-test-prep-practice-220274-large.jpg",
-    "studentList": ["sabbir1054@gmail.com", "bashar@gmail.com"]
+    "results": [
+      {
+        "semesterName": "Spring-2022",
+        "courseId": "SE101",
+        "quiz1": "4",
+        "quiz2": "4",
+        "quiz3": "4",
+        "quizAdditional": "4",
+        "assignment1": "4",
+        "assignment2": "4",
+        "assignment3": "4",
+        "presentation": "78",
+        "mid": "2",
+        "final": "52"
+      },
+      {
+        "semesterName": "Spring-2022",
+        "courseId": "SE111",
+        "quiz1": "4",
+        "quiz2": "4",
+        "quiz3": "4",
+        "quizAdditional": "4",
+        "assignment1": "4",
+        "assignment2": "4",
+        "assignment3": "4",
+        "presentation": "78",
+        "mid": "2",
+        "final": "52"
+      },
+      {
+        "semesterName": "Summer-2022",
+        "courseId": "SE131",
+        "quiz1": "4",
+        "quiz2": "4",
+        "quiz3": "4",
+        "quizAdditional": "4",
+        "assignment1": "4",
+        "assignment2": "4",
+        "assignment3": "4",
+        "presentation": "78",
+        "mid": "2",
+        "final": "52"
+      }
+    ],
+    "email": "ebrahim2@gmail.com"
   },
   {
-    "_id": "629ee40f462f89a26dc9d911",
-    "courseId": "SE111",
-    "courseTitle": "Database ",
-    "courseImg": "https://i.ibb.co/cXHCR20/staar-english-i-test-prep-practice-220274-large.jpg",
-    "studentList": ["sabbir1054@gmail.com", "bashar@gmail.com"]
+    "results": [
+      {
+        "semesterName": "Spring-2022",
+        "courseId": "SE101",
+        "quiz1": "4",
+        "quiz2": "4",
+        "quiz3": "4",
+        "quizAdditional": "4",
+        "assignment1": "4",
+        "assignment2": "4",
+        "assignment3": "4",
+        "presentation": "10",
+        "mid": "2",
+        "final": "20",
+        "grade": "A+"
+      },
+      {
+        "semesterName": "Spring-2022",
+        "courseId": "SE111",
+        "quiz1": "4",
+        "quiz2": "4",
+        "quiz3": "4",
+        "quizAdditional": "4",
+        "assignment1": "4",
+        "assignment2": "4",
+        "assignment3": "4",
+        "presentation": "5",
+        "mid": "2",
+        "final": "52"
+      },
+      {
+        "semesterName": "Summer-2022",
+        "courseId": "SE131",
+        "quiz1": "4",
+        "quiz2": "4",
+        "quiz3": "4",
+        "quizAdditional": "4",
+        "assignment1": "4",
+        "assignment2": "4",
+        "assignment3": "4",
+        "presentation": "10",
+        "mid": "2",
+        "final": "52"
+      }
+    ],
+    "email": "sabbir1054@gmail.com"
   },
   {
-    "_id": "629ee40f462f89a26dc9d912",
-    "courseId": "SE121",
-    "courseTitle": "Engineering",
-    "courseImg": "https://i.ibb.co/cXHCR20/staar-english-i-test-prep-practice-220274-large.jpg",
-    "studentList": ["sabbir1054@gmail.com", "bashar@gmail.com"]
-  },
-  {
-    "_id": "629ee40f462f89a26dc9d913",
-    "courseId": "SE122",
-    "courseTitle": "Structured Programming Language",
-    "courseImg": "https://i.ibb.co/cXHCR20/staar-english-i-test-prep-practice-220274-large.jpg",
-    "studentList": ["sabbir1054@gmail.com", "bashar@gmail.com"]
-  },
-  {
-    "_id": "629ee40f462f89a26dc9d914",
-    "courseId": "SE131",
-    "courseTitle": "Cyber Engineering",
-    "courseImg": "https://i.ibb.co/cXHCR20/staar-english-i-test-prep-practice-220274-large.jpg",
-    "studentList": ["sabbir1054@gmail.com", "bashar@gmail.com"]
+    "results": [
+      {
+        "semesterName": "Spring-2022",
+        "courseId": "SE101",
+        "quiz1": "4",
+        "quiz2": "4",
+        "quiz3": "4",
+        "quizAdditional": "4",
+        "assignment1": "4",
+        "assignment2": "4",
+        "assignment3": "4",
+        "presentation": "10",
+        "mid": "2",
+        "final": "20",
+        "grade": "A+"
+      },
+      {
+        "semesterName": "Spring-2022",
+        "courseId": "SE111",
+        "quiz1": "4",
+        "quiz2": "4",
+        "quiz3": "4",
+        "quizAdditional": "4",
+        "assignment1": "4",
+        "assignment2": "4",
+        "assignment3": "4",
+        "presentation": "5",
+        "mid": "2",
+        "final": "52"
+      },
+      {
+        "semesterName": "Summer-2022",
+        "courseId": "SE131",
+        "quiz1": "10",
+        "quiz2": "15",
+        "quiz3": "8",
+        "quizAdditional": "4",
+        "assignment1": "10",
+        "assignment2": "4",
+        "assignment3": "4",
+        "presentation": "10",
+        "mid": "15",
+        "final": "25"
+      }
+    ],
+    "email": "bashar@gmail.com"
   }
 ]
