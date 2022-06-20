@@ -14,9 +14,11 @@ const SingleResult = ({ student, slNo }) => {
   const [grade, setGrade] = useState("");
   const [isEditable, setIsEditable] = useState(false);
   const [newData, setNewData] = useState({});
+  const newResult = {};
 
   //post data to database
-  // const handleUpdate = (data) => {
+  const handleUpdate = () => {
+    console.log(newResult);
   //   fetch(`https://stormy-forest-12943.herokuapp.com/users/${userData.email}`, {
   //     method: "PUT",
   //     headers: {
@@ -26,20 +28,30 @@ const SingleResult = ({ student, slNo }) => {
   //   })
   //     .then((res) => res.json())
   //     .then((data) => console.log(data));
-  // };
+  };
 
-  const {
-    register,
-    handleSubmit,
-    watch,
-    formState: { errors },
-  } = useForm();
 
-  const onSubmit = (data) => {
-    // handleUpdate(data);
-    setTimeout(() => {
-      window.location.reload(false);
-    }, 500);
+  const onSubmit = () => {
+    const quiz1 = document.getElementById('quiz1').value;
+    const quiz2 = document.getElementById('quiz2').value;
+    const quiz3 = document.getElementById('quiz3').value;
+    const assignment1 = document.getElementById('assignment1').value;
+    const presentation = document.getElementById('presentation').value;
+    const mid = document.getElementById('mid').value;
+    const final = document.getElementById('final').value;
+    //set in the object
+    newResult.quiz1 = quiz1;
+    newResult.quiz2 = quiz2;
+    newResult.quiz3 = quiz3;
+    newResult.assignment = assignment1;
+    newResult.presentation = presentation;
+    newResult.mid = mid;
+    newResult.final = final;
+
+    // setTimeout(() => {
+    //   window.location.reload(false);
+    // }, 500);
+    handleUpdate();
     saveProfile();
   };
 
@@ -105,9 +117,10 @@ const SingleResult = ({ student, slNo }) => {
         <tr>
           <td>{slNo + 1}</td>
           <td>{data.id}</td>
-          {/* <td>{studentResult.quiz1}</td> */}
+
           <td className={`${styles.width}`}>
             <input
+              id="quiz1"
               className={`${styles.width}`}
               disabled={isEditable ? false : true}
               defaultValue={studentResult.quiz1}
@@ -116,6 +129,7 @@ const SingleResult = ({ student, slNo }) => {
           </td>
           <td className={`${styles.width}`}>
             <input
+              id="quiz2"
               className={`${styles.width}`}
               disabled={isEditable ? false : true}
               defaultValue={studentResult.quiz2}
@@ -124,6 +138,7 @@ const SingleResult = ({ student, slNo }) => {
           </td>
           <td className={`${styles.width}`}>
             <input
+              id="quiz3"
               className={`${styles.width}`}
               disabled={isEditable ? false : true}
               defaultValue={studentResult.quiz3}
@@ -133,6 +148,7 @@ const SingleResult = ({ student, slNo }) => {
 
           <td className={`${styles.width}`}>
             <input
+              id="assignment1"
               className={`${styles.width}`}
               disabled={isEditable ? false : true}
               defaultValue={studentResult.assignment1}
@@ -141,6 +157,7 @@ const SingleResult = ({ student, slNo }) => {
           </td>
           <td className={`${styles.width}`}>
             <input
+              id="presentation"
               className={`${styles.width}`}
               disabled={isEditable ? false : true}
               defaultValue={studentResult.presentation}
@@ -149,6 +166,7 @@ const SingleResult = ({ student, slNo }) => {
           </td>
           <td className={`${styles.width}`}>
             <input
+              id="mid"
               className={`${styles.width}`}
               disabled={isEditable ? false : true}
               defaultValue={studentResult.mid}
@@ -157,6 +175,7 @@ const SingleResult = ({ student, slNo }) => {
           </td>
           <td className={`${styles.width}`}>
             <input
+              id="final"
               className={`${styles.width}`}
               disabled={isEditable ? false : true}
               defaultValue={studentResult.final}
@@ -165,7 +184,10 @@ const SingleResult = ({ student, slNo }) => {
           </td>
           <td>{grade}</td>
           <td>
-            <button className={`btn btn-primary ${isEditable ? "" : "d-none"}`}>
+            <button
+              className={`btn btn-primary ${isEditable ? "" : "d-none"}`}
+              onClick={onSubmit}
+            >
               Save
             </button>
             <button
