@@ -1,10 +1,37 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Table from "react-bootstrap/Table";
 import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../../Firebase/FirebaseInit";
 const SingleResult = ({ result }) => {
-    const [user] = useAuthState(auth);
-  
+  const [user] = useAuthState(auth);
+  const [grade, setGrade] = useState("");
+    const makeResult = () => {
+      const marks =
+        parseInt(result.quiz1) +
+        parseInt(result.quiz2) +
+        parseInt(result.quiz3) +
+        parseInt(result.assignment1) +
+        parseInt(result.presentation) +
+        parseInt(result.mid) +
+        parseInt(result.final);
+
+      if (80 <= marks && marks <= 100) {
+        setGrade("A+");
+      } else if (70 <= marks && marks <= 79) {
+        setGrade("A");
+      } else if (60 <= marks && marks <= 69) {
+        setGrade("A-");
+      } else if (50 <= marks && marks <= 59) {
+        setGrade("B");
+      } else if (40 <= marks && marks <= 49) {
+        setGrade("C");
+      } else if (0 <= marks && marks <= 39) {
+        setGrade("F");
+      }
+  };
+  useEffect(() => {
+    makeResult();
+  },[])
   return (
     <div>
       {user && result && (
@@ -30,7 +57,7 @@ const SingleResult = ({ result }) => {
               <td>{result.presentation}</td>
               <td>{result.mid}</td>
               <td>{result.final}</td>
-              <td>{result.grade}</td>
+              <td>{grade}</td>
             </tr>
           </tbody>
         </Table>

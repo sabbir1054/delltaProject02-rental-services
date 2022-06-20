@@ -19,15 +19,15 @@ const SingleResult = ({ student, slNo }) => {
   //post data to database
   const handleUpdate = () => {
     console.log(newResult);
-  //   fetch(`https://stormy-forest-12943.herokuapp.com/users/${userData.email}`, {
-  //     method: "PUT",
-  //     headers: {
-  //       "content-type": "application/json",
-  //     },
-  //     body: JSON.stringify(data),
-  //   })
-  //     .then((res) => res.json())
-  //     .then((data) => console.log(data));
+    //   fetch(`https://stormy-forest-12943.herokuapp.com/users/${userData.email}`, {
+    //     method: "PUT",
+    //     headers: {
+    //       "content-type": "application/json",
+    //     },
+    //     body: JSON.stringify(newResult),
+    //   })
+    //     .then((res) => res.json())
+    //     .then((data) => console.log(data));
   };
 
 
@@ -39,6 +39,7 @@ const SingleResult = ({ student, slNo }) => {
     const presentation = document.getElementById('presentation').value;
     const mid = document.getElementById('mid').value;
     const final = document.getElementById('final').value;
+    
     //set in the object
     newResult.quiz1 = quiz1;
     newResult.quiz2 = quiz2;
@@ -47,6 +48,7 @@ const SingleResult = ({ student, slNo }) => {
     newResult.presentation = presentation;
     newResult.mid = mid;
     newResult.final = final;
+    newResult.grade = grade;
 
     // setTimeout(() => {
     //   window.location.reload(false);
@@ -104,7 +106,7 @@ const SingleResult = ({ student, slNo }) => {
     } else if (40 <= marks && marks <= 49) {
       setGrade("C");
     } else if (0 <= marks && marks <= 39) {
-      setGrade("Fail");
+      setGrade("F");
     }
   };
   setTimeout(() => {
