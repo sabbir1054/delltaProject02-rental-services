@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { Badge, Card, Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import styles from '../Dashboard.module.css'
-const TeacherSubjectCard = ({ course }) => {
+
+const ResultSubCard = ({ course }) => {
   const [data, setData] = useState([]);
   //get  courses
   useEffect(() => {
@@ -14,17 +14,17 @@ const TeacherSubjectCard = ({ course }) => {
     <>
       <Col>
         <Card>
-          <Card.Img variant="top" src={`${data.courseImg}`} />
           <Card.Body>
             <Card.Text>
-              <h4 className="text-center">{data.courseTitle}</h4>
+              <h5>Course ID: {data.courseId}</h5>
+              <p className="">Course Title: {data.courseTitle}</p>
             </Card.Text>
           </Card.Body>
           <Card.Footer>
-            <Link to={`/enrolledList/${data.courseId}`}>
+            <Link to={`/courseResult/${data.courseId}`}>
               {" "}
-              <Badge variant="primary" className={`p-2 ${styles.allStudent}`}>
-                See All Enrolled Student
+              <Badge variant="primary" className={`p-2 `}>
+                Make Result
               </Badge>
             </Link>
           </Card.Footer>
@@ -34,4 +34,4 @@ const TeacherSubjectCard = ({ course }) => {
   );
 };
 
-export default TeacherSubjectCard;
+export default ResultSubCard;

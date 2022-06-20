@@ -1,14 +1,37 @@
-{
-  "_id": { "$oid": "629f0493462f89a26decdc8f" },
-  "id": "5785756",
-  "role": "student",
-  "name": "Sabbir Hossain",
-  "email": "sabbir1054@gmail.com",
-  "password": "45",
-  "dept": "Software Engineering",
-  "mobile": "01733208221",
-  "address": "Norshinghopur,Ashulia",
-  "balance": "143.254",
-  "registerDate": "12/05/2022",
-  "courses": ["SE111", "SE131", "SE101"]
-}
+[
+  {
+    "_id": "629ee40f462f89a26dc9d910",
+    "courseId": "SE101",
+    "courseTitle": "Introduction to software Engineering",
+    "courseImg": "https://i.ibb.co/cXHCR20/staar-english-i-test-prep-practice-220274-large.jpg",
+    "studentList": ["sabbir1054@gmail.com", "bashar@gmail.com"]
+  },
+  {
+    "_id": "629ee40f462f89a26dc9d911",
+    "courseId": "SE111",
+    "courseTitle": "Database ",
+    "courseImg": "https://i.ibb.co/cXHCR20/staar-english-i-test-prep-practice-220274-large.jpg",
+    "studentList": ["sabbir1054@gmail.com", "bashar@gmail.com"]
+  },
+  {
+    "_id": "629ee40f462f89a26dc9d912",
+    "courseId": "SE121",
+    "courseTitle": "Engineering",
+    "courseImg": "https://i.ibb.co/cXHCR20/staar-english-i-test-prep-practice-220274-large.jpg",
+    "studentList": ["sabbir1054@gmail.com", "bashar@gmail.com"]
+  },
+  {
+    "_id": "629ee40f462f89a26dc9d913",
+    "courseId": "SE122",
+    "courseTitle": "Structured Programming Language",
+    "courseImg": "https://i.ibb.co/cXHCR20/staar-english-i-test-prep-practice-220274-large.jpg",
+    "studentList": ["sabbir1054@gmail.com", "bashar@gmail.com"]
+  },
+  {
+    "_id": "629ee40f462f89a26dc9d914",
+    "courseId": "SE131",
+    "courseTitle": "Cyber Engineering",
+    "courseImg": "https://i.ibb.co/cXHCR20/staar-english-i-test-prep-practice-220274-large.jpg",
+    "studentList": ["sabbir1054@gmail.com", "bashar@gmail.com"]
+  }
+]

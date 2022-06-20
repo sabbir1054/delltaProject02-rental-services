@@ -57,7 +57,7 @@ const UserBalance = () => {
                 <tbody>
                   <tr>
                     <td>1</td>
-                    <td>Tuition Fee</td>
+                    <td>{person.role==="teacher"?"Coffee":"Tuition Fee" }</td>
                     <td>1200</td>
                   </tr>
                 </tbody>

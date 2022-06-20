@@ -5,27 +5,33 @@ const StudentInfo = ({ userData }) => {
   const [isEditable, setIsEditable] = useState(false);
   const [newData, setNewData] = useState({});
 
+  //post data to database
+  const handleUpdate = (data) => {
+   
+    fetch(`https://stormy-forest-12943.herokuapp.com/users/${userData.email}`, {
+      method: "PUT",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(data),
+    })
+      .then((res) => res.json())
+      .then((data) => console.log(data));
+  };
+
   const {
     register,
     handleSubmit,
     watch,
     formState: { errors },
   } = useForm();
+
   const onSubmit = (data) => {
-    setNewData(data);
-  };
-  //post data to database
-  const handleUpdate = () => {
-    
-    fetch(`https://stormy-forest-12943.herokuapp.com/users/${userData.email}`, {
-      method: "PUT",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(newData),
-    })
-      .then((res) => res.json())
-      .then((data) => console.log(data));
+     handleUpdate(data);
+    setTimeout(() => {
+     window.location.reload(false);
+    }, 500);
+    saveProfile();
   };
 
   const updateProfile = () => {
@@ -33,7 +39,6 @@ const StudentInfo = ({ userData }) => {
   };
   const saveProfile = () => {
     setIsEditable(false);
-    handleUpdate();
   };
 
   return (
@@ -112,9 +117,18 @@ const StudentInfo = ({ userData }) => {
           {" "}
           <input
             type="submit"
-            value={`${isEditable ? "Save" : "Update profile"}`}
-            className={`${styles.student_submit_btn} py-2 my-2 w-25 `}
-            onClick={isEditable ? saveProfile : updateProfile}
+            value="Save"
+            className={`${styles.student_submit_btn} py-2 my-2 w-25 ${
+              isEditable ? "" : "d-none"
+            }`}
+          />
+          <input
+            type="button"
+            value="Update Profile"
+            className={`${styles.student_submit_btn} py-2 my-2 w-25 ${
+              isEditable ? "d-none" : ""
+            }`}
+            onClick={updateProfile}
           />
         </div>
       </form>
@@ -123,3 +137,5 @@ const StudentInfo = ({ userData }) => {
 };
 
 export default StudentInfo;
+//onClick={isEditable ? saveProfile : updateProfile}
+//value={`${isEditable ? "Save" : "Update profile"}`}

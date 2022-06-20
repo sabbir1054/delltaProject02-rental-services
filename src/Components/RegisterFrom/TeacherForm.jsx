@@ -41,13 +41,16 @@ const TeacherForm = () => {
       formState: { errors },
     } = useForm();
     const onSubmit = (data) => {
+          data.date = date;
+
       if (data.password !== data.confirmPass) {
         setMatch(false);
       } else {
         setMatch(true);
+        const url = `/dashboard/${data.email}`;
         createUserWithEmailAndPassword(data.email, data.password).then(() => {
           postData(data);
-          navigate("/dashboard");
+          user ? navigate(url) : navigate("/");
         });
       }
     };
@@ -104,15 +107,16 @@ const TeacherForm = () => {
             className={` my-1  py-2 ${styles.input_box_email}`}
             defaultValue={`${date}`}
             disabled
-            // {...register("date", { required: true })}
           />
 
           <input
             className={` my-1  py-2 ${styles.input_box_name}`}
             placeholder="Password"
+            type={`password`}
             {...register("password", { required: true })}
           />
           <input
+            type={`password`}
             className={` my-1  py-2 ${styles.input_box_email}`}
             placeholder="Confirm Password"
             {...register("confirmPass", { required: true })}

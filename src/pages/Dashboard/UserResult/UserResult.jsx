@@ -6,6 +6,7 @@ import StudentNav from '../../../Components/NavBars/StudentsNav/StudentNav';
 import TeacherNav from '../../../Components/NavBars/TeacherNav/TeacherNav';
 import auth from '../../../Firebase/FirebaseInit';
 import StudentsResult from '../../StudentPages/StudentsResult';
+import TeacherResult from '../../TeacherPages/TeacherResult/TeacherResult';
  
 const UserResult = () => {
       const [user] = useAuthState(auth);
@@ -21,15 +22,16 @@ const UserResult = () => {
       <div>
         {user ? (
           <div>
-            {userData.role === "student" ? <StudentNav /> : <TeacherNav/>}
-            {user ? (
-              userData ? (
+            {userData.role === "student" ? (
+              <>
+                <StudentNav />
                 <StudentsResult userData={userData} />
-              ) : (
-                <Loader />
-              )
+              </>
             ) : (
-              <Loader />
+              <>
+                <TeacherNav />
+                <TeacherResult userData={userData} />
+              </>
             )}
           </div>
         ) : (
