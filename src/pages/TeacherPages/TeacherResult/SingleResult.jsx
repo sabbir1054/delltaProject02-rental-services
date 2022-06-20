@@ -56,9 +56,10 @@ const SingleResult = ({ student, slNo }) => {
 
     
   }
-  useEffect(() => {
+  setTimeout(() => {
     makeResult();
-  }, []);
+  }, 1000);
+
   return (
     <>
       {user ? (
