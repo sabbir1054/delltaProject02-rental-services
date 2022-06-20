@@ -26,7 +26,7 @@ const CourseResult = () => {
 
   return (
     <div>
-     {user? <TeacherNav/>:<Loader/>}
+      {user ? <TeacherNav /> : <Loader />}
       <Container>
         <h6 className="text-center py-3 pt-5 display-6 ">
           Selected Course: <span className="fw-bold">{params.courseId}</span>
@@ -46,16 +46,20 @@ const CourseResult = () => {
                 <th>Mid Term</th>
                 <th>Final</th>
                 <th>SGPA</th>
+                <th>Update/Save</th>
               </tr>
             </thead>
             <tbody>
-              
-              {user?students.map((student) => (
-                <SingleResult
-                  student={student}
-                  slNo={data.studentList.indexOf(student)}
-                />
-              )):<Loader/>}
+              {user ? (
+                students.map((student) => (
+                  <SingleResult
+                    student={student}
+                    slNo={data.studentList.indexOf(student)}
+                  />
+                ))
+              ) : (
+                <Loader />
+              )}
             </tbody>
           </Table>
         </div>
