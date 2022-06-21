@@ -5,7 +5,7 @@ const StudentInfo = ({ userData }) => {
   const [isEditable, setIsEditable] = useState(false);
   const [newData, setNewData] = useState({});
 
-  //post data to database
+  //update data to database
   const handleUpdate = (data) => {
    
     fetch(`https://stormy-forest-12943.herokuapp.com/users/${userData.email}`, {

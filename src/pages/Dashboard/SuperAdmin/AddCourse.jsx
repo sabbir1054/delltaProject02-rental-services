@@ -15,6 +15,15 @@ const AddCourse = () => {
       .then((res) => res.json())
       .then((data) => setCourseData(data));
   }, []);
+    
+    //reset form data
+    const reset = () => {
+         document.getElementById(`courseId`).value='';
+         document.getElementById(`courseTitle`).value='';
+         document.getElementById(`courseImg`).value='';
+    }
+    
+    
   //post a course
   const postData = (data) => {
     console.log(data);
@@ -29,7 +38,8 @@ const AddCourse = () => {
     })
       .then((res) => res.json())
       .then((result) => {
-        console.log(result);
+          console.log(result);
+          reset();
       });
   };
   console.log(courseData);
