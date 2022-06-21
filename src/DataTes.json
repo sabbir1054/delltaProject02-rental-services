@@ -1,148 +1,33 @@
 [
   {
-    "_id": "62b0211fde98075fb2224ec8",
-    "results": [
-      {
-        "semesterName": "Spring-2022",
-        "courseId": "SE101",
-        "quiz1": "4",
-        "quiz2": "4",
-        "quiz3": "4",
-        "quizAdditional": "4",
-        "assignment1": "4",
-        "assignment2": "4",
-        "assignment3": "4",
-        "presentation": "78",
-        "mid": "2",
-        "final": "52"
-      },
-      {
-        "semesterName": "Spring-2022",
-        "courseId": "SE111",
-        "quiz1": "4",
-        "quiz2": "4",
-        "quiz3": "4",
-        "quizAdditional": "4",
-        "assignment1": "4",
-        "assignment2": "4",
-        "assignment3": "4",
-        "presentation": "78",
-        "mid": "2",
-        "final": "52"
-      },
-      {
-        "semesterName": "Summer-2022",
-        "courseId": "SE131",
-        "quiz1": "4",
-        "quiz2": "4",
-        "quiz3": "4",
-        "quizAdditional": "4",
-        "assignment1": "4",
-        "assignment2": "4",
-        "assignment3": "4",
-        "presentation": "78",
-        "mid": "2",
-        "final": "52"
-      }
-    ],
-    "email": "ebrahim2@gmail.com"
+    "_id": "62b18a2fde98075fb26173c5",
+    "courseId": "SE101",
+    "date": "10-06-2022",
+    "stuList": ["5785756", "147852", "147854"]
   },
   {
-    "_id": "62b0211fde98075fb2224ec9",
-    "results": [
-      {
-        "semesterName": "Spring-2022",
-        "courseId": "SE101",
-        "quiz1": "4",
-        "quiz2": "4",
-        "quiz3": "4",
-        "quizAdditional": "4",
-        "assignment1": "4",
-        "assignment2": "4",
-        "assignment3": "4",
-        "presentation": "10",
-        "mid": "2",
-        "final": "20",
-        "grade": "A+"
-      },
-      {
-        "semesterName": "Spring-2022",
-        "courseId": "SE111",
-        "quiz1": "4",
-        "quiz2": "4",
-        "quiz3": "4",
-        "quizAdditional": "4",
-        "assignment1": "4",
-        "assignment2": "4",
-        "assignment3": "4",
-        "presentation": "5",
-        "mid": "2",
-        "final": "52"
-      },
-      {
-        "semesterName": "Summer-2022",
-        "courseId": "SE131",
-        "quiz1": "4",
-        "quiz2": "4",
-        "quiz3": "4",
-        "quizAdditional": "4",
-        "assignment1": "4",
-        "assignment2": "4",
-        "assignment3": "4",
-        "presentation": "10",
-        "mid": "2",
-        "final": "15"
-      }
-    ],
-    "email": "sabbir1054@gmail.com"
+    "_id": "62b18a2fde98075fb26173c6",
+    "courseId": "SE131",
+    "date": "10-06-2022",
+    "stuList": ["5785756", "147852", "147854"]
   },
   {
-    "_id": "62b0211fde98075fb2224eca",
-    "results": [
-      {
-        "semesterName": "Spring-2022",
-        "courseId": "SE101",
-        "quiz1": "4",
-        "quiz2": "4",
-        "quiz3": "4",
-        "quizAdditional": "4",
-        "assignment1": "4",
-        "assignment2": "4",
-        "assignment3": "4",
-        "presentation": "10",
-        "mid": "2",
-        "final": "20",
-        "grade": "A+"
-      },
-      {
-        "semesterName": "Spring-2022",
-        "courseId": "SE111",
-        "quiz1": "4",
-        "quiz2": "4",
-        "quiz3": "4",
-        "quizAdditional": "4",
-        "assignment1": "4",
-        "assignment2": "4",
-        "assignment3": "4",
-        "presentation": "5",
-        "mid": "2",
-        "final": "52"
-      },
-      {
-        "semesterName": "Summer-2022",
-        "courseId": "SE131",
-        "quiz1": "10",
-        "quiz2": "15",
-        "quiz3": "8",
-        "quizAdditional": "4",
-        "assignment1": "10",
-        "assignment2": "4",
-        "assignment3": "4",
-        "presentation": "10",
-        "mid": "15",
-        "final": "25"
-      }
-    ],
-    "email": "bashar@gmail.com"
+    "_id": "62b18a2fde98075fb26173c7",
+    "courseId": "SE131",
+    "date": "15-06-2022",
+    "stuList": ["5785756", "147852", "147854"]
+  },
+ 
+  {
+    "_id": "62b19a341b97e767140d6138",
+    "courseId": "SE122",
+    "date": "21-06-2022",
+    "stuList": ["5785756", "147852", "147854"]
+  },
+  {
+    "_id": "62b19bccdc284be395061601",
+    "courseId": "SE152",
+    "date": "21-06-2022",
+    "stuList": ["5785756", "147852", "147854"]
   }
 ]

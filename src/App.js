@@ -10,6 +10,8 @@ import UserResult from "./pages/Dashboard/UserResult/UserResult";
 import Home from "./pages/HomePage/Home";
 import NotFound from "./pages/NotFound/NotFound";
 import RegisterPage from "./pages/RegisterPage/RegisterPage";
+import Attendance from "./pages/TeacherPages/AttendancePage/Attendance";
+import SingleAttendance from "./pages/TeacherPages/AttendancePage/SingleAttendance";
 import EnrolledStudent from "./pages/TeacherPages/EnrolledStudent";
 import CourseResult from "./pages/TeacherPages/TeacherResult/CourseResult";
 import TeacherResult from "./pages/TeacherPages/TeacherResult/TeacherResult";
@@ -29,6 +31,8 @@ function App() {
         <Route path="/courseResult/:courseId" element={<CourseResult />} />
         <Route path="/balance/:email" element={<UserBalance />} />
         <Route path="/courses/:email" element={<UserCourses />} />
+        <Route path="/attendance/:courseId" element={<Attendance />} />
+        <Route path="/attendance/:courseId/:date" element={<SingleAttendance />} />
         <Route path="/enrolledList/:courseId" element={<EnrolledStudent />} />
         <Route path="*" element={<NotFound />} />
       </Routes>

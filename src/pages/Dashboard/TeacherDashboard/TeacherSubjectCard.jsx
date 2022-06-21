@@ -27,6 +27,12 @@ const TeacherSubjectCard = ({ course }) => {
                 See All Enrolled Student
               </Badge>
             </Link>
+            <Link to={`/attendance/${data.courseId}`}>
+              {" "}
+              <Badge variant="primary" className={`p-2 ${styles.allStudent}`}>
+                See Attendance
+              </Badge>
+            </Link>
           </Card.Footer>
         </Card>
       </Col>
