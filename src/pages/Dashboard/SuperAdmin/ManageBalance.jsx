@@ -16,7 +16,7 @@ const ManageBalance = () => {
   }, []);
 
   return (
-    <div className={styles.addCourse}>
+    <div className={`pt-5 ${styles.addCourse}`}>
       <h1 className="text-center mt-5">Manage User Balance</h1>
       <div>
         <Table striped bordered hover>

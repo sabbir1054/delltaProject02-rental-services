@@ -5,6 +5,7 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import Loader from "../../../Components/Loader/Loader";
 import auth from "../../../Firebase/FirebaseInit";
 import styles from "../Dashboard.module.css";
+import AssignCourse from "./AssignCourse";
 
 const AddCourse = () => {
   const [user] = useAuthState(auth);
@@ -42,7 +43,7 @@ const AddCourse = () => {
           reset();
       });
   };
-  console.log(courseData);
+
 
   const onSubmit = () => {
     const newCourse = {};
@@ -106,7 +107,7 @@ const AddCourse = () => {
         </Accordion.Item>
         <Accordion.Item eventKey="1">
           <Accordion.Header>
-            <h4 className="text-center text-decoration-underline">
+            <h4 className="text-center ">
               Delete Course
             </h4>
           </Accordion.Header>
@@ -142,6 +143,15 @@ const AddCourse = () => {
                 )}
               </tbody>
             </Table>
+          </Accordion.Body>
+        </Accordion.Item>
+        <Accordion.Item eventKey="2">
+          <Accordion.Header className="add-course">
+            <h4 className="text-center ">Assign Course to user</h4>
+          </Accordion.Header>
+                  <Accordion.Body>
+                      Coming Soon
+           {/* <AssignCourse/> */}
           </Accordion.Body>
         </Accordion.Item>
       </Accordion>

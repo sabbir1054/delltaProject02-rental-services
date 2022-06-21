@@ -5,6 +5,7 @@ import TeacherNav from '../../../Components/NavBars/TeacherNav/TeacherNav';
 import auth from '../../../Firebase/FirebaseInit';
 import styles from '../Dashboard.module.css'
 import AddCourse from './AddCourse';
+import AssignCourse from './AssignCourse';
 import ManageBalance from './ManageBalance';
 const SuperAdmin = ({ person }) => {
   const [user] = useAuthState(auth);
@@ -20,7 +21,7 @@ const SuperAdmin = ({ person }) => {
             </Col>
           </Row>
           <AddCourse />
-          <ManageBalance/>
+          <ManageBalance />
         </Container>
       </div>
     );

@@ -16,7 +16,7 @@ const updateProfile = () => {
     const handleUpdate = (data) => {
     
       fetch(
-        `http://localhost:5000/updateBalance/${user.email}`,
+        `https://stormy-forest-12943.herokuapp.com/updateBalance/${user.email}`,
         {
           method: "PUT",
           headers: {
@@ -44,7 +44,7 @@ const updateProfile = () => {
           <td>{user.name}</td>
           <td>{user.email}</td>
           <td>
-            <input id={`balance${user.id}`} defaultValue={user.balance} />
+            <input disabled={isEditable?false:true} id={`balance${user.id}`} defaultValue={user.balance} />
           </td>
           <td>
             <button

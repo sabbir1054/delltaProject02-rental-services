@@ -32,6 +32,23 @@ const StudentForm = () => {
         console.log(result);
       });
   };
+  //post result data function
+
+  const postResultData = (data) => {
+    const url = "https://stormy-forest-12943.herokuapp.com/results";
+
+    fetch(url, {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(data),
+    })
+      .then((res) => res.json())
+      .then((result) => {
+        console.log(result);
+      });
+  };
 
   const {
     register,
@@ -48,7 +65,10 @@ const StudentForm = () => {
       setMatch(true);
       const url = `/dashboard/${data.email}`;
       createUserWithEmailAndPassword(data.email, data.password).then(() => {
+       const newResult = { email: `${data.email}`, results: [] };
         postData(data);
+        postResultData(newResult);
+        
         user?navigate(url):navigate('/')
       });
     }
