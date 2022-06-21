@@ -57,3 +57,9 @@
 /* ===========================
         SuperAdmin dashboard
 ======================================= */
+
+.addCourse h1{
+background-color: #A179EB;
+color: white;
+font-family: "Roboto", sans-serif;
+}

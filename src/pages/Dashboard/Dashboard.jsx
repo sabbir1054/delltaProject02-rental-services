@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import Loader from "../../Components/Loader/Loader";
 import auth from "../../Firebase/FirebaseInit";
 import Student from "./StudentDashboard/Student";
+import SuperAdmin from "./SuperAdmin/SuperAdmin";
 import Teacher from "./TeacherDashboard/Teacher";
 
 const Dashboard = () => {
@@ -18,10 +19,11 @@ const Dashboard = () => {
 
   return (
     <>
+     
       {
         
        
-        user?(person.role==="teacher")?(<Teacher user={person}></Teacher>):(<Student user={person}></Student>):<Loader></Loader>
+        user ? person.role === "admin" ? (<SuperAdmin person={person} />):(person.role==="teacher")?(<Teacher user={person}></Teacher>):(<Student user={person}></Student>):<Loader></Loader>
       }
     </>
   );

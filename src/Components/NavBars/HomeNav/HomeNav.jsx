@@ -6,7 +6,6 @@ import auth from '../../../Firebase/FirebaseInit';
 import styles from './HomeNav.module.css'
 const HomeNav = () => {
   const  [user]  = useAuthState(auth);
-  console.log(user);
     return (
       <>
         <Navbar className={styles.navBackground}>

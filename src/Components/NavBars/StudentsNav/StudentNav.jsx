@@ -8,7 +8,6 @@ import styles from './StudentNav.module.css'
 
 const StudentNav = () => {
   const [user] = useAuthState(auth);
-  console.log(user);
   const handleSignOut = () => {
     signOut(auth)
       .then(() => {

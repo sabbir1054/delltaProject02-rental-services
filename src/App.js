@@ -2,6 +2,7 @@ import { Route, Routes } from "react-router-dom";
 import StudentRegister from "./Components/RegisterFrom/StudentRegister";
 import TeacherRegistration from "./Components/RegisterFrom/TeacherRegistration";
 import Dashboard from "./pages/Dashboard/Dashboard";
+import SuperAdmin from "./pages/Dashboard/SuperAdmin/SuperAdmin";
 import UserBalance from "./pages/Dashboard/UserBalance/UserBalance";
 import UserCourses from "./pages/Dashboard/UserCourses/UserCourses";
 import UserProfile from "./pages/Dashboard/UserProfile/UserProfile";
